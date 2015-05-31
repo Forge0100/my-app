@@ -6,16 +6,20 @@ $(function() {
 
 	// Функция проверки и перенаправлений
 	redirect = function() {
+		var check_page_register = location.pathname.indexOf('register.html') + 1 ? true : false;
 		// Проверка на отсутствие куков Фамилии и Табельного номера, а также что сейчас не находимся на странице Регистрации
-		if((surname == null) && (tid == null) && location.pathname != '/register.html') {
+		if((surname == null) && (tid == null) && check_page_register == false) {
 			// Перенаправление на страницу Регистрации
 			location = 'register.html';
 		// Проверка на то, что куки Фамилии и Табельного номера у нас не пустые,
 		// а также что мы находимся на странице Регистрации
-		} else if((surname != null) && (tid != null) && location.pathname == '/register.html') {
+		} else if((surname != null) && (tid != null) && check_page_register == true) {
 			// Перенаправление на страницу тестов
 			location = 'index.html';
 		}
+
+		// alert(location.pathname.indexOf('register.html') + 1 ? true : false);
+		// alert(location.pathname == '/register.html');
 	}
 
 	// Функция добавляющая Фамилию и Табельный номер в подвал сайта
