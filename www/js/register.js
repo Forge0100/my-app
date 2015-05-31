@@ -9,9 +9,12 @@ $(function() {
 		// Проверка на то, что Фамилия и Табельный номер не пустые
 		if((surname != null) && (tid != null)) {
 			// Добавление переданой в тектовом поле Фамилии 
-			$.cookie('surname', surname);
+			// $.cookie('surname', surname);
+			window.localStorage.setItem("surname", surname);
 			// Добавление переданой в тектовом поле Табельного номера
-			$.cookie('tid', tid);
+			// $.cookie('tid', tid);
+			window.localStorage.setItem("tid", tid);
+			
 			// Перенаправление на главную страницу
 			location = 'index.html';
 		}

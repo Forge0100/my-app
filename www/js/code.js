@@ -1,11 +1,14 @@
 $(function() {
 		// Достаем с куков Фамилию
-	var surname = $.cookie('surname'),
+	// var surname = $.cookie('surname'),
+		var surname = window.localStorage.getItem("surname");
 		// Достаем с куков Табельный номер
-		tid		= $.cookie('tid');
+		// tid		= $.cookie('tid');
+			tid = window.localStorage.getItem("tid");
 
 	// Функция проверки и перенаправлений
 	redirect = function() {
+		// Проверка на то, что мы находимся на странице Регистрации
 		var check_page_register = location.pathname.indexOf('register.html') + 1 ? true : false;
 		// Проверка на отсутствие куков Фамилии и Табельного номера, а также что сейчас не находимся на странице Регистрации
 		if((surname == null) && (tid == null) && check_page_register == false) {
@@ -34,13 +37,14 @@ $(function() {
 	clear_not_full_question = function() {
 		var a = false;
 		for(var i=0;i<data.length;i++)
-			if($.cookie('r' + i) == null)
+			if(/*$.cookie('r' + i)*/window.localStorage.getItem('r' + i) == null)
 				a = true;
 
 		if(a)
 			for(var i=0;i<=data.length;i++)
 				// Удаление текущего кука
-				$.removeCookie('r'+i);
+				// $.removeCookie('r'+i);
+				window.localStorage.removeItem('r'+i);
 
 	}
 

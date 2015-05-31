@@ -20,7 +20,8 @@ $(function() {
 	clear_cookie = function() {
 		for(var i=0;i<=data.length;i++)
 			// Удаление текущего кука
-			$.removeCookie('r'+i);
+			// $.removeCookie('r'+i);
+			window.localStorage.removeItem('r' + i);
 	}
 
 	// Функция очищающая все поля label в вариантах ответов
@@ -73,7 +74,7 @@ $(function() {
 		// Проверка на не существование первого ответа на вопрос в куках
 		// "Все не проверяю, так-как смысла нету... если одного нету,
 		// то и всех остальных автоматически"
-		if($.cookie('r0') == null)
+		if(/*$.cookie('r0')*/window.localStorage.getItem("r0") == null)
 			// Прерывание выполнения дальнейших действий этой функции
 			return;
 
@@ -105,7 +106,8 @@ $(function() {
 		var result = $(block_id + ' input[name=radio]:checked').val();
 
 		// Добавляет в куки значение варианта ответа с именем r[текущий вопрос]
-		$.cookie('r'+c, result);
+		// $.cookie('r'+c, result);
+		window.localStorage.setItem('r'+c, result);
 
 		// Прибавляет одиницу для перехода на следующий вопрос
 		c++;
