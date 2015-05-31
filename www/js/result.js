@@ -10,7 +10,7 @@ $(function() {
 			block = '';
 
 		// Проверка первого варианта ответа на пустоту
-		if(/*$.cookie('r0')*/window.localStorage.getItem("r0") == null){
+		if(window.localStorage.getItem("r0") == null){
 			// Сообщение которое выводится в случае отсутствия ответов в куках
 			$(block_id).html('<h3 align="center">Результаты теста отсутствуют</h3>');
 			// Прерывание дальнейшего выполнения этой функции
@@ -19,7 +19,6 @@ $(function() {
 
 		// Проходимся по всем записям из массива data и выводим их в сгенерированые блоки
 		for(var i=0;i<data.length;i++) {
-			// var res = $.cookie('r' + i);
 			var res = window.localStorage.getItem('r' + i);
 
 			// Списки ответов

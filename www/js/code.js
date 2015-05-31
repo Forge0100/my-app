@@ -1,9 +1,7 @@
 $(function() {
-		// Достаем с куков Фамилию
-	// var surname = $.cookie('surname'),
-		var surname = window.localStorage.getItem("surname");
-		// Достаем с куков Табельный номер
-		// tid		= $.cookie('tid');
+		// Достаем с localstorage Фамилию
+		var surname = window.localStorage.getItem("surname"),
+		// Достаем с localstorage Табельный номер
 			tid = window.localStorage.getItem("tid");
 
 	// Функция проверки и перенаправлений
@@ -37,13 +35,12 @@ $(function() {
 	clear_not_full_question = function() {
 		var a = false;
 		for(var i=0;i<data.length;i++)
-			if(/*$.cookie('r' + i)*/window.localStorage.getItem('r' + i) == null)
+			if(window.localStorage.getItem('r' + i) == null)
 				a = true;
 
 		if(a)
 			for(var i=0;i<=data.length;i++)
-				// Удаление текущего кука
-				// $.removeCookie('r'+i);
+				// Удаление текущего localstorage
 				window.localStorage.removeItem('r'+i);
 
 	}
