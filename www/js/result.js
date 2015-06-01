@@ -23,8 +23,8 @@ $(function() {
 
 			// Списки ответов
 			list += '<li>'+
-						'<h3>'+ data[i][0] +'</h3>'+
-						'<p>'+ data[i][3][res] +'</p>'
+						'<h3 style="white-space: normal;">'+ data[i][0] +'</h3>'+
+						'<p style="white-space: normal;">'+ data[i][3][res] +'</p>'
 					'</li>';  
 		}
 
