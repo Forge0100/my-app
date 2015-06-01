@@ -22,7 +22,7 @@ $(function() {
 			var res = window.localStorage.getItem('r' + i);
 
 			// Списки ответов
-			list += '<li>'+
+			list += '<li style="margin: 10px;">'+
 						'<h3 style="white-space: normal;">'+ data[i][0] +'</h3>'+
 						'<p style="white-space: normal;">'+ data[i][3][res] +'</p>'
 					'</li>';  

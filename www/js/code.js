@@ -1,29 +1,3 @@
-// Функция находит число, которое повторяется большее количество раз в массиве arr
-find_more_reapet = function(answ0, answ1, answ2) {
-	var i,j,k,l;
-	for(var i=5;i<=12;i++)
-	{
-		var r = window.localStorage.getItem('r' + i);
-		if(r == 0) i++;
-		else if(r == 1) j++;
-		else if(r == 2) k++;
-	}
-
-	if((i > j) && (i > k))
-		l = 0;
-	else if((j > i) && (j > k))
-		l = 1;
-	else
-		l = 2;
-
-	if(l == 0)
-		return answ0;
-	else if(l == 1)
-		return answ1;
-	else
-		return answ2;
-}
-
 $(function() {
 		// Достаем с localstorage Фамилию
 		var surname = window.localStorage.getItem("surname"),
