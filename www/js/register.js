@@ -14,7 +14,7 @@ $(function() {
 			window.localStorage.setItem("tid", tid);
 			
 			// Перенаправление на главную страницу
-			location = 'index.html';
+			location = 'main.html';
 		}
 	});
 });

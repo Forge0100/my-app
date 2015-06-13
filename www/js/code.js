@@ -16,7 +16,7 @@ $(function() {
 		// а также что мы находимся на странице Регистрации
 		} else if((surname != null) && (tid != null) && check_page_register == true) {
 			// Перенаправление на страницу тестов
-			location = 'index.html';
+			location = 'main.html';
 		}
 
 		// alert(location.pathname.indexOf('register.html') + 1 ? true : false);
